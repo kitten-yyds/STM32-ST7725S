@@ -1,19 +1,19 @@
 # ST7735S Library
 This is an ST7735S driver library which is based on the STM32 HAL Library.  
-## Features
+## 🌟Features
 - Full Hardware Abstraction: Built upon the STM32 HAL, which enables easy portability across the STM32 product family.
 - High Performance: Verified to operate reliably at SPI clock rates of up to 50 MHz, a speed that maximizes the display's refresh rate.
 - Essential Functionality: Includes fundamental operations, such as display initialization, filling the screen, and drawing images.
 - Simple API: Features a clean and well-documented interface that makes integration into your project straightforward.
 - Backlight Control: Provides simple functions for managing the display's backlight.
-## Supported Hardware
+## 🌟Supported Hardware
 This driver is designed to work with STM32 microcontrollers for which the STM32Cube HAL library is available. It has been tested on an STM32F4 series but is readily portable to other series (e.g., F0, F1, F3, F7, H7).
-## Requirements
+## 🌟Requirements
 - A STM32 microcontroller that supports SPI and GPIO peripherals.
 - The STM32Cube HAL library corresponding to your MCU series (e.g., stm32f4xx_hal.h).
 - An ST7735S-based TFT LCD display.
 - An IDE/Toolchain that is compatible with STM32 development(make,Keil,etc).
-## Hardware Connection
+## 🌟Hardware Connection
 Connect your display to the MCU as shown in the table below. The pin names on the display side may vary slightly.
 
 | Display | MCU Pin Function | Required MCU Pin Configuration |
@@ -30,7 +30,7 @@ Connect your display to the MCU as shown in the table below. The pin names on th
 
 > **Note**: `The Maximum output speed` of the `DC`, `CS`, and `RES` pins should be set to `Very High`.And at the same time, the `GPIO output level` of these pins should be set to `High`(in STM32CubeMX).
 
-## Usage
+## 🌟Usage
 ### 1. Include the Library
 Add `ST7735S.c` and `ST7735S.h` to your project and include the header file.  
 ```c
@@ -65,40 +65,40 @@ ST7735_Fill_Screen(&my_pins, 0x001F, 1, 1, 128, 128);//(e.g., BLUE in RGB565)
 const uint8_t pic[128*128*2] = { ... }; //Like this
 ST7735_Show_img(&my_pins,pic,1,1,128,128);
 ```
-## Porting to Other STM32 Series
+## 🌟Porting to Other STM32 Series
 The core driver logic is hardware-agnostic. To port this library:  
 1. Change the HAL Header: Replace #include "stm32f4xx_hal.h" in ST7735S.h with the header for your target series (e.g., #include "stm32f1xx_hal.h").
 2. Update the TFT_pins Struct: Adjust the GPIO_TypeDef ports and pin numbers in your application code to match your new hardware design.
 
-## Performance Note
+## 🌟Performance Note
 This driver has been tested to work stably at **SPI clock speeds of up to 50 MHz** on an STM32F411 microcontroller. The achievable speed is highly dependent on the performance of your MCU, the quality of your display module, and your PCB layout. If you encounter issues, try reducing the SPI baud rate.
 
-## License
+## 📜License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Contributing
+## 🤝Contributing
 Contributions are welcome! Please feel free to submit pull requests or open issues to suggest improvements or report bugs.
 
-## About the Author
+## 🐱About the Author
 A student who just graduated from high school, this is the code I wrote while learning.The code may be immature, but the functionality is definitely useful! Please give me more guidance from all the experts.(If a bug is found, it is definitely not a bug, it is a feature, a feature! 😭)
 
 ---
 # ST7735S 库
 这是一个基于STM32 HAL库的ST7735S驱动库
-## 特点：
+## 🌟特点：
 - 完全硬件抽象：基于STM32 HAL构建，可轻松跨STM32产品系列进行移植
 - 高性能：经验证，可在高达50 MHz的SPI时钟频率下可靠运行，该速度可最大限度地提高显示器的刷新率
 - 基本功能：包括基本操作，如显示初始化、填充屏幕和绘制图像
 - 简单的API：具有一个干净且文档齐全的接口，可以直接集成到项目中
 - 背光控制：提供管理显示器背光的简单功能
-## 支持的硬件：
+## 🌟支持的硬件：
 此驱动程序旨在与STM32Cube HAL库可用的STM32微控制器配合使用。它已经在STM32F4系列上进行了测试，很容易移植到其他系列（例如F0、F1、F3、F7、H7）
-## 要求：
+## 🌟要求：
 - 一个支持SPI和GPIO的STM32
 - 与MCU系列对应的STM32Cube HAL库（例如stm32f4xx_HAL.h）
 - 一个驱动为ST7735S的TFT LCD显示屏
 - 与STM32开发兼容的IDE/工具链（make、Keil等）
-## 硬件连接
+## 🌟硬件连接
 如下表所示，将显示器连接到MCU。显示屏侧的引脚名称可能略有不同
 
 | 显示屏 | mcu引脚功能 | 所需MCU引脚配置 |
@@ -115,7 +115,7 @@ A student who just graduated from high school, this is the code I wrote while le
 
 > **提示**: `DC`, `CS`, `RES`引脚在`The Maximum output speed`设置中应当设置为`Very High`。同时， 这些引脚的 `GPIO output level`设置也应当设置为 `High`（在 STM32CubeMX）。
 
-## 用法：
+## 🌟用法：
 ### 1. 包含库文件
 添加 `ST7735S.c` 和 `ST7735S.h` 到您的项目中，然后在代码中包含该库的头文件。
 ```c
@@ -150,22 +150,22 @@ ST7735_Fill_Screen(&my_pins, 0x001F, 1, 1, 128, 128);//(例子, RGB565格式下�
 const uint8_t pic[128*128*2] = { ... }; //像这样
 ST7735_Show_img(&my_pins,pic,1,1,128,128);
 ```
-## 移植到其他的STM32：
+## 🌟移植到其他的STM32：
 核心驱动程序逻辑与硬件无关。如果您要移植该库，请执行以下操作： 
 1. 更改HAL头文件：将ST7735S.h中的`#include“stm32f4xx_HAL.h”`替换为目标系列的标题（例如`#include“stm32f1xx_HAL.h`）。
 2. 检查你的 TFT_pins 结构体：调整应用程序代码中的GPIO_TypeDef端口和引脚号，以匹配新的硬件。
 
-## 性能说明
+## 🌟性能说明
 该驱动程序已在STM32F411 mcu上测试，可在高达50MHz的SPI时钟速度下稳定工作。可达到的速度在很大程度上取决于mcu的性能、显示模块和PCB布局的质量。如果遇到玄学问题，请尝试降低SPI波特率。
 
-## 许可证
+## 📜许可证
 此项目根据MIT许可证获得许可-有关详细信息，请参阅许可证文件。
 
-## 贡献
+## 🤝贡献
 欢迎为项目添砖加瓦！请随时提交 Pull Request 或提出问题来建议改进或报告错误。
 
-## 关于作者
+## 🐱关于作者
 一只刚高中毕业的学牲，这是我边学边写的代码。代码可能很稚嫩，但功能绝对好用！请各位大佬多多指教。（如果发现BUG，那一定不是BUG，是特性，特性！😭）
 
-## IMG/图片
+## ✨IMG/图片
 ![pic](./pic.gif)
